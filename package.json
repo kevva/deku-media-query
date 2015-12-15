@@ -31,7 +31,8 @@
   ],
   "dependencies": {
     "magic-virtual-element": "^1.0.6",
-    "matchmedia": "^0.1.2"
+    "matchmedia": "^0.1.2",
+    "object-omit": "^1.0.0"
   },
   "devDependencies": {
     "assert-element": "^0.3.1",
@@ -45,7 +46,6 @@
     "deku": "^1.0.0 ",
     "eslint-config-xo-react": "^0.3.0",
     "eslint-plugin-react": "^3.9.0",
-    "object-omit": "^1.0.0",
     "xo": "*"
   },
   "browserify": {
