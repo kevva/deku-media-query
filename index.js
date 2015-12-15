@@ -15,6 +15,10 @@ const propTypes = {
 	}
 };
 
+const defaultProps = {
+	component: 'div'
+};
+
 function initialState() {
 	return {
 		matches: false
@@ -62,7 +66,7 @@ function render({props, state}) {
 		return <noscript/>;
 	}
 
-	return dom(component || 'div', objectOmit(props, Object.keys(propTypes)), children);
+	return dom(component, objectOmit(props, Object.keys(propTypes)), children);
 }
 
-export default {afterMount, afterUpdate, initialState, propTypes, render};
+export default {afterMount, afterUpdate, defaultProps, initialState, propTypes, render};
