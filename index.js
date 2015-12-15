@@ -7,6 +7,9 @@ const propTypes = {
 	children: {
 		type: 'array'
 	},
+	component: {
+		type: 'string'
+	},
 	query: {
 		type: 'string'
 	}
