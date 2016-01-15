@@ -19,13 +19,13 @@ const defaultProps = {
 	component: 'div'
 };
 
-function initialState() {
+const initialState = () => {
 	return {
 		matches: false
 	};
-}
+};
 
-function updateMatch(mq, state, setState) {
+const updateMatch = (mq, state, setState) => {
 	const {matches} = state;
 
 	if (mq.matches === matches) {
@@ -33,9 +33,9 @@ function updateMatch(mq, state, setState) {
 	}
 
 	setState({matches: mq.matches});
-}
+};
 
-function updateQuery({props, state}, setState) {
+const updateQuery = ({props, state}, setState) => {
 	const {query} = props;
 	const {mq} = state;
 
@@ -48,17 +48,17 @@ function updateQuery({props, state}, setState) {
 	setState({mq: mql});
 	mql.addListener(updateMatch.bind(null, mql, state, setState));
 	updateMatch(mql, state, setState);
-}
+};
 
-function afterMount(component, el, setState) {
+const afterMount = (component, el, setState) => {
 	updateQuery(component, setState);
-}
+};
 
-function afterUpdate(component, prevProps, prevState, setState) {
+const afterUpdate = (component, prevProps, prevState, setState) => {
 	updateQuery(component, setState);
-}
+};
 
-function render({props, state}) {
+const render = ({props, state}) => {
 	const {children, component} = props;
 	const {matches} = state;
 
@@ -67,6 +67,6 @@ function render({props, state}) {
 	}
 
 	return dom(component, objectOmit(props, Object.keys(propTypes)), children);
-}
+};
 
 export default {afterMount, afterUpdate, defaultProps, initialState, propTypes, render};

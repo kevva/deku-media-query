@@ -15,14 +15,16 @@ $ npm install --save deku-media-query
 ```js
 import MediaQuery from 'deku-media-query';
 
-export function render() {
+const render = () => {
 	return (
 		<MediaQuery query='(min-width: 1280px)' class='Unicorn'>
 			<div><img src='cat.jpg' alt=''/></div>
 			<div><img src='unicorn.jpg' alt=''/></div>
 		</MediaQuery>
 	);
-}
+};
+
+export default {render};
 ```
 
 
