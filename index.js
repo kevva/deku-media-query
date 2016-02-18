@@ -25,6 +25,16 @@ const initialState = () => {
 	};
 };
 
+const shouldUpdate = ({state}, nextProps, nextState) => {
+	const {matches} = state;
+
+	if (matches === nextState.matches) {
+		return false;
+	}
+
+	return true;
+};
+
 const updateMatch = (mq, state, setState) => {
 	const {matches} = state;
 
@@ -69,4 +79,4 @@ const render = ({props, state}) => {
 	return dom(component, objectOmit(props, Object.keys(propTypes)), children);
 };
 
-export default {afterMount, afterUpdate, defaultProps, initialState, propTypes, render};
+export default {afterMount, afterUpdate, defaultProps, initialState, propTypes, render, shouldUpdate};
