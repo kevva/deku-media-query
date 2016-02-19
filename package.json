@@ -31,6 +31,7 @@
     "response"
   ],
   "dependencies": {
+    "deep-equal": "^1.0.1",
     "magic-virtual-element": "^1.0.6",
     "matchmedia": "^0.1.2",
     "object-omit": "^1.0.0"

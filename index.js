@@ -1,4 +1,5 @@
 /** @jsx dom */
+import deepEqual from 'deep-equal';
 import dom from 'magic-virtual-element';
 import matchmedia from 'matchmedia';
 import objectOmit from 'object-omit';
@@ -29,7 +30,7 @@ const shouldUpdate = ({props, state}, nextProps, nextState) => {
 	const {children} = props;
 	const {matches} = state;
 
-	if (matches === nextState.matches && JSON.stringify(children) === JSON.stringify(nextProps.children)) {
+	if (matches === nextState.matches && deepEqual(children, nextProps.children)) {
 		return false;
 	}
 
