@@ -1,6 +1,6 @@
 {
   "name": "deku-media-query",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Media query component for Deku",
   "license": "MIT",
   "repository": "kevva/deku-media-query",
