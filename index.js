@@ -25,10 +25,11 @@ const initialState = () => {
 	};
 };
 
-const shouldUpdate = ({state}, nextProps, nextState) => {
+const shouldUpdate = ({props, state}, nextProps, nextState) => {
+	const {children} = props;
 	const {matches} = state;
 
-	if (matches === nextState.matches) {
+	if (matches === nextState.matches && JSON.stringify(children) === JSON.stringify(nextProps.children)) {
 		return false;
 	}
 
