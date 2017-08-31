@@ -4,9 +4,14 @@ import {render, tree} from 'deku';
 import MediaQuery from '../';
 
 const app = tree(
-	<MediaQuery query='(min-width: 1280px)' class='Unicorn'>
-		<h1>Hello world!</h1>
-	</MediaQuery>
+	<div>
+		<MediaQuery query='(min-width: 1280px)'>
+			<h1>Hello world! (min-width: 1280px)</h1>
+		</MediaQuery>
+		<MediaQuery query='(max-width: 1280px)'>
+			<h1>Hello world! (max-width: 1280px)</h1>
+		</MediaQuery>
+	</div>
 );
 
 render(app, document.body);
