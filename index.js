@@ -58,7 +58,7 @@ const render = ({props, state}) => {
 		return <noscript/>;
 	}
 
-	return dom(component, objectOmit(props, ['children, component, query']), children);
+	return dom(component, objectOmit(props, ['children', 'component', 'query']), children);
 };
 
 const propTypes = {
